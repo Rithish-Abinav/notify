@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="notify">Notify Me</button>
+
+<script>
+    const NotificationBtn=document.querySelector(".notify");
+
+    const requestPermission = ()=>{
+        if(!("Notification" in window))
+        throw new Error("not support");
+
+Notification.requestPermission().then((Permissions)=>{
+    const notification=new Notification("Test",{
+        body:"this is test nitify",
+    });
+});
+
+
+
+
+
+    };
+
+    NotificationBtn.addEventListener("click",requestPermission);
+
+
+
+</script>
+
+
+
+</body>
+
+
+
+</html>
